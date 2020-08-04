@@ -1,0 +1,486 @@
+describe('challeg',function(){
+   
+    beforeEach(function(){
+        cy.visit('http://www.shino.de/parkcalc/');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+    })
+    afterEach(function(){
+        cy.log("poniendo datos a valor iriginal");
+    })
+    // EN ESTA VAMOS A DEMOSTRAR LA FUNCIONALIDAD DE LA PAGINA
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[SI]',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[Valet Parking1][SI]',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 12');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[Short-Term Parking]',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 6');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[Economy Parking]',function(){
+        cy.get('#ParkingLot').select('Economy Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 6');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[Long-Term Garage Parking]',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 6');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD DE LAS FUNCIONES DE LA PAGINA[Long-Term Surface Parking]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 6');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD PRUEBA DE LOS 7 DIAS [Long-Term Surface Parking]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('10:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/19/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 60');
+    })
+    it('DEMOSTRACION DE LA FUNCIONALIDAD PRUEBA DE LOS 7 DIAS [Long-Term Garage Parking]',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get('#LeavingTime').clear().type('10:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/19/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 72');
+    })
+// CUANDO PONES LAS HORA EN HORA NORMAL EL PROGRAMA NO TE LA TIENE QUE CAMBIAR AHORA MILITAR 
+    it('SI PONES UNA HORA NORMAL TE LA CAMBIA A UNA HORA MILITAR[NO]',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('#LeavingTime').contains('1:00');
+    })
+
+ // SI PONES LA HORA EN HORA MILITAR NO DEBERIA DE CAMBIARTE LA HORA SI LA PONES EN PM
+    it('SI PONES UNA HORA EN MILITAR Y PONES EN PM EL TE SUMA 12 [NO]',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('#LeavingTime').contains('13:00');
+       
+    })
+//SOLO PASA SI PONES LA HORA MILITAR Y LA PONES EN PM
+    it('SI PONES UNA HORA EN MILITAR Y PONES EN AM NO TE SUMA 12 (ESTE TIENE QUE FUNCIONAR)[SI] ',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('#LeavingTime').contains('13:00');
+    })
+
+
+ // ESTO PASA EN LAS PRIMERAS 2 OPCIONES (EN ESTA PASA)  
+    it('PONER LA MISMA HORA Valet Parking ', function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONER LA MISMA HORA Short-Term Parking[NO] ', function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+
+    })
+
+//VEMOS QUE EN ESTE ESTA BIEN PROGRAMADO PERO EN LOS ANTERIORES NO LO ESTA 
+    it('PONER LA MISMA HORA Economy Parking',function(){
+        cy.get('#ParkingLot').select('Economy Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONER LA MISMA HORA Long-Term Garage Parking [SI]',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONER LA MISMA HORA Long-Term Surface Parking[SI]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('13:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+//EN LO PERSONAL ESTO NO DEBERIA DE PASAR YA QUE CUANDO UN PROGRAMA SE HACE DISSEÑADO PARA UNA HORA DEBE DE RESPETARLO
+ // SI EL PROGRAMADOR QUIERE SER MAS FLECCIBLE DEBERIA DE AGREGAR LA PREGUNTA SI LO DESEA EN HORA MILITAR O EN HORA NORMAL
+    it('TE RECONOCE LAS HORAS MILITARES CUANDO ESTA DISEÑADO PARA UNA HORA NORMAL[NO] ', function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('13:00');
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+ // 30 ES UNA HORA QUE NO EXISTE EN NINGUN FORMATO 
+    it('AL PONER UNA HORA QUE NO EXISTE EL PROGRAMA SIEMPRE TE SUMA [NO]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+                cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('30:00');
+        cy.get('#StartingTime').clear().type('10:00');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+        })
+
+ // EL PROGRAMA NO DEBERIA DE TOMAR COSTO ALGUNO FECHA NO EXISTE       
+    it('SI PONES EN Valet Parking [NO] ',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('00/00/0000');
+        cy.get('#LeavingDate').clear().type('00/00/0000');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#LeavingTime').clear().type('11:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+       
+    })
+    it('SI PONES EN Short-Term Parking [NO] ',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('00/00/0000');
+        cy.get('#LeavingDate').clear().type('00/00/0000');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#LeavingTime').clear().type('11:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+       
+    })
+//si pones una hora despues si te la toma correcto 
+    it('SI PONES EN Economy Parking[SI]',function(){
+        cy.get('#ParkingLot').select('Economy Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('00/00/0000');
+        cy.get('#LeavingDate').clear().type('00/00/0000');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#LeavingTime').clear().type('12:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('SI PONES EN Long-Term Garage Parking [SI]',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('00/00/0000');
+        cy.get('#LeavingDate').clear().type('00/00/0000');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#LeavingTime').clear().type('12:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('SI PONES EN Long-Term Surface Parking [SI]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+         })
+        cy.get('#StartingDate').clear().type('00/00/0000');
+        cy.get('#LeavingDate').clear().type('00/00/0000');
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#LeavingTime').clear().type('12:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+// EL PROGRAMA NO DEBERIA DE TOMAR COSTO ALGUNO ESTO PASA SOLO SI PONES LA MISMA HORA 
+    it('SI PONES EN LA HORA DE INICIO Y EN LA HORA DE SALIDA Y LE PONES LETRAS EN AMBAS TE COBRA',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingDate').clear().type('JOSE');
+        cy.get('#LeavingDate').clear().type('BOTTO');
+        cy.get('#LeavingTime').clear().type('11:00');
+        cy.get('#StartingTime').clear().type('11:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');    
+    })
+    // EN ESTE CASO PONDEMOS HORA DIFERENTE Y NO CONTARA
+    it('SI PONES EN LA HORA DE INICIO Y EN LA HORA DE SALIDA Y LE PONES LETRAS EN AMBAS TE COBRA',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get(':nth-child(3) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get('#StartingDate').clear().type('JOSE');
+        cy.get('#LeavingDate').clear().type('BOTTO');
+        cy.get('#LeavingTime').clear().type('11:00');
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');    
+    })
+
+// PONES UNA HORA QUE NO EXIXTE EL PROGRAMA TE COBRA EN LAS PRIMERAS 2(ESTAS SI FUNCIONA )(EN ESTAS PRIMERAS SI TE COBRA)
+    it('PONES HORAS QUE NO EXISTEN TAMBIEN TE COBRA [NO]',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('jose');
+        cy.get('#StartingTime').clear().type('jose');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONES HORAS QUE NO EXISTEN TAMBIEN TE COBRA [NO] ',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('jose');
+        cy.get('#StartingTime').clear().type('josed');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+// ESTOS SON LOS CASOS QUE SI FUNCIONA 
+    it('PONES HORAS QUE NO EXISTEN TAMBIEN TE COBRA [SI] ',function(){
+        cy.get('#ParkingLot').select('Economy Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('jose');
+        cy.get('#StartingTime').clear().type('josed');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONES HORAS QUE NO EXISTEN TAMBIEN TE COBRA [SI] ',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('jose');
+        cy.get('#StartingTime').clear().type('josed');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+    it('PONES HORAS QUE NO EXISTEN TAMBIEN TE COBRA [SI] ',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#LeavingTime').clear().type('jose');
+        cy.get('#StartingTime').clear().type('josed');
+        cy.get('#StartingDate').clear().type('12/12/2020');
+        cy.get('#LeavingDate').clear().type('12/12/2020');
+        cy.get('[type="submit"]').click();
+        cy.get('.SubHead > b').contains('$ 0');
+    })
+//ESTO PASA EN TODOS LOS CASOS 
+    it('PRUEBA Valet Parking [NO] ',function(){
+        cy.get('#ParkingLot').select('Valet Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').should('be.checked');
+    })
+    it('PRUEBA Short-Term Parking [NO] ',function(){
+        cy.get('#ParkingLot').select('Short-Term Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').should('be.checked');
+    })
+    it('PARA Economy Parking [NO] ',function(){
+        cy.get('#ParkingLot').select('Economy Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').should('be.checked');
+    })
+      it('PARA Long-Term Garage Parking[NO]',function(){
+        cy.get('#ParkingLot').select('Long-Term Garage Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').should('be.checked');
+    })
+    it('PARA Long-Term Surface Parking [NO]',function(){
+        cy.get('#ParkingLot').select('Long-Term Surface Parking');
+        cy.get('#ParkingLot').first().then(function(ParkingLotELE){
+            cy.log(ParkingLotELE.text())
+        })
+        cy.get('#StartingTime').clear().type('12:00');
+        cy.get('#LeavingTime').clear().type('1:00');
+        cy.get(':nth-child(2) > :nth-child(2) > [value="AM"]').check();
+        cy.get(':nth-child(3) > :nth-child(2) > [value="PM"]').check();
+        cy.get('[type="submit"]').click();
+        cy.get(':nth-child(2) > :nth-child(2) > [value="PM"]').should('be.checked');
+    })
+})
